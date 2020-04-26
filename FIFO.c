@@ -1,10 +1,10 @@
 #include "FIFO.h"
 
-int runnable = 0;
-int curTime = 0;
-int running = 0;
-
 int schedule_FIFO(struct process* proc, int numProc) {
+    int runnable = 0;
+    int curTime = 0;
+    int running = 0;
+
     qsort(proc, numProc, sizeof(struct process), fifocmpfunc);
     setCPU(getpid(), SCHEDULER_CPU);
     for (int i = 0; i < numProc; i++) {

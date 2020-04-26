@@ -30,11 +30,11 @@ int main(int argc, char* argv[]) {
     if (strcmp(policyStr, "FIFO") == 0) {
         schedule_FIFO(proc, numProc);
     } else if (strcmp(policyStr, "RR") == 0) {
-        policy = RR;
+        //policy = RR;
     } else if (strcmp(policyStr, "SJF") == 0) {
-        policy = SJF;
+        schedule_SJF(proc, numProc);
     } else if (strcmp(policyStr, "PSJF") == 0) {
-        policy = PSJF;
+        //policy = PSJF;
     } else {
         perror("unrecognized policy");
     }
