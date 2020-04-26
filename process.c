@@ -74,7 +74,7 @@ pid_t childProcess(struct process* proc){
 		for (int i = 0; i < proc->exec_time; i++) {
 			unitTime();
 #ifdef DEBUG
-			if (i % 500 == 0)
+			if (i % 250 == 0)
 				fprintf(stderr, "%s: %d/%d\n", proc->name, i, proc->exec_time);
 #endif
 		}

@@ -28,4 +28,16 @@ sjf:
 	gcc -Wall -g -c SJF.c
 	gcc -Wall -g -c FIFO.c
 	gcc -o main.out main.o process.o SJF.o FIFO.o -lm
+	rm *.o
 	sudo ./main.out < ./OS_PJ1_Test/SJF_1.txt
+
+rr:
+	dmesg --clear
+	gcc -Wall -g -c main.c
+	gcc -Wall -g -DDEBUG -c process.c
+	gcc -Wall -g -c SJF.c
+	gcc -Wall -g -c FIFO.c
+	gcc -Wall -g -c RR.c
+	gcc -o main.out main.o process.o SJF.o FIFO.o RR.o -lm
+	rm *.o
+	sudo ./main.out < ./OS_PJ1_Test/RR_5.txt
