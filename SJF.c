@@ -46,7 +46,7 @@ int schedule_SJF(struct process* proc, int numProc) {
             running_p = pop(pq);
             if (running_p->exist != 1) {
                 childProcess(running_p);
-                perror("child process spawning again");
+                //perror("child process spawning again");
             }
             maxPriority(running_p->pid);
             running_p->active = 1;

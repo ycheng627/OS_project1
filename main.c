@@ -1,6 +1,5 @@
 #define _GNU_SOURCE
 #include "process.h"
-#include "scheduler.h"
 #include <errno.h>
 #include <sched.h>
 #include <stdio.h>
@@ -34,7 +33,7 @@ int main(int argc, char* argv[]) {
     } else if (strcmp(policyStr, "SJF") == 0) {
         schedule_SJF(proc, numProc);
     } else if (strcmp(policyStr, "PSJF") == 0) {
-        //policy = PSJF;
+        schedule_PSJF(proc, numProc);
     } else {
         perror("unrecognized policy");
     }

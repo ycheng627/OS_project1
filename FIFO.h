@@ -1,6 +1,5 @@
 #define _GNU_SOURCE
 #include "process.h"
-#include "scheduler.h"
 #include <errno.h>
 #include <sched.h>
 #include <stdio.h>

@@ -1,4 +1,21 @@
 #include <sys/types.h>
+#include <errno.h>
+#include <sched.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/sysinfo.h>
+#include <unistd.h>
+
+#define unitTime()                      \
+    {                                   \
+        volatile unsigned long z;       \
+        for (z = 0; z < 1000000UL; z++) \
+            ;                           \
+    }                                   \
+    //choose z to make sure no accidental naming problem \
+    //use define to prevent function call overhead from timing
+
 
 #define FORK_CPU 1
 #define SCHEDULER_CPU 0

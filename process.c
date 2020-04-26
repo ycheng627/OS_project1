@@ -1,13 +1,5 @@
 #define _GNU_SOURCE
 #include "process.h"
-#include "scheduler.h"
-#include <errno.h>
-#include <sched.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/sysinfo.h>
-#include <unistd.h>
 
 
 int setCPU(pid_t pid, int cpuNum) {

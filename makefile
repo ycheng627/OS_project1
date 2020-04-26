@@ -41,3 +41,17 @@ rr:
 	gcc -o main.out main.o process.o SJF.o FIFO.o RR.o -lm
 	rm *.o
 	sudo ./main.out < ./OS_PJ1_Test/RR_5.txt
+
+psjf:
+	dmesg --clear
+	gcc -Wall -g -c main.c
+	gcc -Wall -g -DDEBUG -c process.c
+	gcc -Wall -g -c SJF.c
+	gcc -Wall -g -c FIFO.c
+	gcc -Wall -g -c RR.c
+	gcc -Wall -g -c PSJF.c
+	gcc -Wall -g -c pqueue.c
+	gcc -Wall -g -c queue.c
+	gcc -o main.out main.o process.o SJF.o FIFO.o RR.o PSJF.o pqueue.o queue.o -lm
+	rm *.o
+	sudo ./main.out < ./OS_PJ1_Test/PSJF_5.txt
