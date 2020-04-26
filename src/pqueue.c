@@ -37,7 +37,7 @@ void push(struct priorityQ* q, struct process* proc) {
         // Traverse the list and find a 
         // position to insert new node 
         while (start->next != NULL && 
-               start->next->priority < proc->exec_time) { 
+               start->next->priority <= proc->exec_time) { 
             start = start->next; 
         } 
   
