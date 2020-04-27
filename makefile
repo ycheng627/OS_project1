@@ -19,7 +19,7 @@ all:
 debug:
 	dmesg --clear
 	gcc -Wall -g -c ./src/main.c
-	gcc -Wall -DDEBUG -g -c ./src/process.c
+	gcc -Wall -g -DDEBUG -c ./src/process.c
 	gcc -Wall -g -c ./src/SJF.c
 	gcc -Wall -g -c ./src/FIFO.c
 	gcc -Wall -g -c ./src/RR.c

@@ -25,7 +25,24 @@ int schedule_RR(struct process* proc, int numProc) {
             minPriority(proc[runnable].pid);
             enQueue(q, &proc[runnable]);
             runnable++;
+#ifdef DEBUG
+            fprintf(stderr, "adding new Process %d at time %d\n", runnable, curTime - 1200);
+#endif
         }
+        
+        if (running_p != NULL && running_p->active == 1 && running_p->exec_time <= 0) {
+#ifdef DEBUG
+            fprintf(stderr, "terminating %s at time %d\n", running_p->name, curTime - 1200);
+#endif
+            deQueue(q);  //get it out of the queue now that it is done
+            terminateProcess(running_p);
+
+            if (runnable == numProc && isEmptyQueue(q)) {
+                exit(0);
+            }
+            running_p = NULL;
+        }
+
         if (switchTime <= 0) {
             if (running_p != NULL) {
                 if (kill(running_p->pid, 0) == 0) {  //To make sure pid still exist and prevent race condition
@@ -40,15 +57,6 @@ int schedule_RR(struct process* proc, int numProc) {
             }
         }
 
-        if (running_p != NULL && running_p->active == 1 && running_p->exec_time <= 0) {
-            deQueue(q);  //get it out of the queue now that it is done
-            terminateProcess(running_p);
-            if (runnable == numProc && isEmptyQueue(q)) {
-                exit(0);
-            }
-            running_p = NULL;
-        }
-
         if (running_p != NULL && running_p->active != 1) {
             if (kill(running_p->pid, 0) == 0) {  //To make sure pid still exist and prevent race condition
                 maxPriority(running_p->pid);
@@ -56,6 +64,8 @@ int schedule_RR(struct process* proc, int numProc) {
             running_p->active = 1;
             //reset to new running_p
         }
+
+        
 
         unitTime();
         if (running_p != NULL && running_p->active == 1) {
