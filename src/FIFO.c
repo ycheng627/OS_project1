@@ -1,6 +1,7 @@
 #include "FIFO.h"
 
 int schedule_FIFO(struct process* proc, int numProc) {
+    //int buf = bufferProc();
     int runnable = 0;
     int curTime = 0;
     int running = 0;
@@ -16,6 +17,7 @@ int schedule_FIFO(struct process* proc, int numProc) {
         if (proc[running].active == 1 && proc[running].exec_time <= 0) {
             terminateProcess(&proc[running]);
             if (running == numProc - 1) {
+                //kill(buf, 9);
                 exit(0);
             }
             running++;

@@ -1,7 +1,7 @@
 #include "SJF.h"
 
 int schedule_SJF(struct process* proc, int numProc) {
-    //int buf = bufferProc();
+    int buf = bufferProc();
     int runnable = 0;
     int curTime = 0;
     struct process* running_p = NULL;
@@ -20,7 +20,7 @@ int schedule_SJF(struct process* proc, int numProc) {
         if (running_p != NULL && running_p->active == 1 && running_p->exec_time <= 0) {
             terminateProcess(running_p);
             if (runnable == numProc && isEmpty(pq)) {
-                //kill(buf, 9);
+                kill(buf, 9);
                 exit(0);
             }
             running_p = NULL;

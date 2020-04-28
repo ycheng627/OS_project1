@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/sysinfo.h>
+#include <sys/resource.h>
 #include <unistd.h>
 
 #define unitTime()                      \
