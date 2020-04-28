@@ -45,13 +45,46 @@ maxPriority(pid){
 }
 
 minPriority(pid){
-    sched_setscheduler(pid, SCHED_FIFO, 0)
+    sched_setscheduler(pid, SCHED_OTHER, 0)
 }
+
+medPriority(pid){
+    sched_setscheduler(pid, SCHED_OTHER, 0)
+    nice(-20);
+}
+
 
 terminateProcess(proc){
     waitpid(proc->pid, NULL, 0)
     proc->active = 0
     proc->exist = 0
+}
+
+bufferProcess(){
+    if (child){
+        setcpu(FORK_CPU)
+        medpriority
+        infinite loop;
+    }
+    if (parent){
+        setcpu(FORK_CPU)
+        medpriority
+    }
+}
+
+childProcess(proc){
+    if (child){
+        sched_yield();
+        record start
+        loop
+        record end
+        print
+    }
+    if (parent){
+        setcpu(FORK_CPU)
+        minPriority
+        print name pid
+    }
 }
 ```
 
@@ -95,6 +128,7 @@ FIFO{
 
 ```c=
 RR{
+    createBuff() //useful in many preemptions and stabilizing time
     qsort() //sort by ready time
     init() //set the cpu, and proc states
     q = createQueue()
@@ -109,6 +143,7 @@ RR{
             dequeue()
             terminate process
             if (all process done){
+                kill buffer
                 exit(0)
             }
         }
@@ -138,6 +173,7 @@ RR{
 
 ```c=
 SJF{
+    createBuff 
     qsort() //sort by ready time
     init() //set the cpu, and proc states
     pq = createPriorityQueue()
@@ -146,6 +182,7 @@ SJF{
         if(running process is done running){
             terminate process
             if (all process done){
+                kill buff
                 exit(0)
             }
         }
@@ -212,6 +249,8 @@ PSJF{
 ## Comparison of Results
 
 ### Notes
+* A file named "error.txt" contains a numerical representation of everything. However, only below results were made into graphs
+    * ==The error report generating program is written by Kaienlin, and I am simply using it to check my work==
 * I will attempt to compare the results for the 4 test cases as specified in DEMO.
 * Since I don't really know how to plot using python or matlab, I will be using google sheets and tricks. More on the methodology later
 * In the numerical comparison section, I am comparing the end time of the ideal and actual forked process.
@@ -266,22 +305,25 @@ P4 0 500
 P5 0 500
 
 Output:
-P1 22834
-P2 22835
-P3 22836
-P4 22837
-P5 22838
-[39572.736519] [Project1] 22834 1587911189.754355770 1587911190.660550871
-[39573.667476] [Project1] 22835 1587911190.660721140 1587911191.591525322
-[39574.577985] [Project1] 22836 1587911191.591664251 1587911192.502051782
-[39575.496157] [Project1] 22837 1587911192.502182947 1587911193.420241107
-[39576.395937] [Project1] 22838 1587911193.420375168 1587911194.320037096
+P1 16366
+P2 16367
+P3 16368
+P4 16369
+P5 16370
+[ 10420.985192] [Project1] 16366 1588062167.294876904 1588062168.182127997
+[ 10421.986098] [Project1] 16367 1588062168.219540761 1588062169.183035571
+[ 10422.955308] [Project1] 16368 1588062169.217554920 1588062170.152245508
+[ 10423.982888] [Project1] 16369 1588062170.189252719 1588062171.179829336
+[ 10424.920229] [Project1] 16370 1588062171.215347141 1588062172.117171723
+
 ```
-![](https://i.imgur.com/IDvxwDe.png)
+![](https://i.imgur.com/1PI4dOZ.png)
+
+
 
 * I've created an excel graph that shows approximately how my process runs compared to the ideal process deduced by the calculation earlier
 * Some numerical Comparisons:
-
+* 
 | Process | Ideal    | Real    | Error     | Error %  |
 |---------|----------|---------|-----------|----------|
 | P1      | 0.929306 | 0.9062  | 0.023106  | 2.486354 |
@@ -289,7 +331,7 @@ P5 22838
 | P3      | 0.929306 | 0.91039 | 0.018916  | 2.035509 |
 | P4      | 0.929306 | 0.91806 | 0.011246  | 1.21017  |
 | P5      | 0.929306 | 0.89966 | 0.029646  | 3.190137 |
-|         |          | Average | 0.016284  | 1.752282 |
+|         |          | Total   | 0.08142   | 1.752282 |
 ___
 ### PSJF_2.txt
 * Hand calculated values that corresponds to ideal
@@ -305,19 +347,18 @@ P4 5000 2000
 P5 7000 1000
 
 Output:
-P1 23032
-P2 23042
-P3 23046
-P4 23056
-P5 23072
-[39865.418725] [Project1] 23042 1587911481.510008448 1587911483.345029518
-[39869.158666] [Project1] 23032 1587911479.748823005 1587911487.084978861
-[39874.502007] [Project1] 23056 1587911488.841011346 1587911492.428332176
-[39876.300480] [Project1] 23072 1587911492.428713052 1587911494.226808429
-[39881.863324] [Project1] 23046 1587911487.085152350 1587911499.789665093
-
+P1 14356
+P2 14366
+P3 14367
+P4 14377
+P5 14387
+[ 9186.843564] [Project1] 14366 1588060932.291060468 1588060934.037701912
+[ 9190.355908] [Project1] 14356 1588060930.502432294 1588060937.550066857
+[ 9195.685099] [Project1] 14377 1588060939.328638025 1588060942.879290227
+[ 9197.473106] [Project1] 14387 1588060942.921875272 1588060944.667307603
+[ 9202.912052] [Project1] 14367 1588060937.583959347 1588060950.106286359
 ```
-![](https://i.imgur.com/axZQEjT.png)
+![](https://i.imgur.com/XgE4cUJ.png)
 
 
 * I've created an excel graph that shows approximately how my process runs compared to the ideal process deduced by the calculation earlier
@@ -326,12 +367,12 @@ P5 23072
 
 | Process | Ideal    | Real     | Error    | Error %  |
 |---------|----------|----------|----------|----------|
-| P1      | 7.434448 | 7.33615  | 0.098298 | 1.322198 |
-| P2      | 3.717224 | 3.5962   | 0.121024 | 3.255764 |
-| P3      | 20.44473 | 20.04084 | 0.403892 | 1.975532 |
-| P4      | 13.01028 | 12.67951 | 0.330774 | 2.542406 |
-| P5      | 14.8689  | 14.47798 | 0.390916 | 2.629087 |
-|         |          | Average  | 0.268981 | 2.344997 |
+| P1      | 7.066336 | 7.33615  | -0.26981 | -3.8183  |
+| P2      | 3.533168 | 3.5962   | -0.06303 | -1.78401 |
+| P3      | 19.43242 | 20.04084 | -0.60842 | -3.13093 |
+| P4      | 12.36609 | 12.67951 | -0.31342 | -2.53453 |
+| P5      | 14.13267 | 14.47798 | -0.34531 | -2.44333 |
+|         |          | Average  | -0.32    | -2.74222 |
 ___
 ### RR_3.txt
 * Since I don't know when my program "starts", I can't really count the first 1200 time unit where round robin doesn't schedule anything. I will therefore use 1200 as the starting point, and adjust all ready time by `ready_time-=1200`.
@@ -356,27 +397,27 @@ P3 26662
 P4 26671
 P5 26672
 P6 26673
-[59208.423055] [Project1] 26662 1587965147.864252931 1587965172.813845499
-[59210.396962] [Project1] 26643 1587965142.530445047 1587965174.787749261
-[59213.943330] [Project1] 26648 1587965145.250197199 1587965178.334113428
-[59226.915400] [Project1] 26673 1587965155.116422453 1587965191.306156452
-[59227.900640] [Project1] 26672 1587965152.443684083 1587965192.291404436
-[59231.388307] [Project1] 26671 1587965151.525809306 1587965195.779066531
+[ 59208.423055] [Project1] 26662 1587965147.864252931 1587965172.813845499
+[ 59210.396962] [Project1] 26643 1587965142.530445047 1587965174.787749261
+[ 59213.943330] [Project1] 26648 1587965145.250197199 1587965178.334113428
+[ 59226.915400] [Project1] 26673 1587965155.116422453 1587965191.306156452
+[ 59227.900640] [Project1] 26672 1587965152.443684083 1587965192.291404436
+[ 59231.388307] [Project1] 26671 1587965151.525809306 1587965195.779066531
 ```
-![](https://i.imgur.com/x9Ow0qc.png)
+![](https://i.imgur.com/IGhlnAq.png)
+
 * The graph aboveshows clearly that the real and ideal process have a very similar overall trend/spread (as expected if my scheduler is correct), but the real process runs faster (magnitude of up to 1500 unit time)
     * Do note that the "end time" as represented by orange is the time the child process end, not the time the scheduler decide to wait for it (which would be basically ideal)
 * Some numerical Comparison
 
-| Process | Ideal       | Real        | Error       | Error %     |
-|---------|-------------|-------------|-------------|-------------|
-| P1      | 33.45501623 | 32.2572999  | 1.197716331 | 3.580079959 |
-| P2      | 37.17224026 | 35.80366993 | 1.368570328 | 3.681699888 |
-| P3      | 31.59640422 | 30.28339982 | 1.313004398 | 4.155550072 |
-| P4      | 55.75836039 | 53.24861979 | 2.509740591 | 4.50110185  |
-| P5      | 52.04113636 | 49.76095986 | 2.280176497 | 4.381488676 |
-| P6      | 51.11183035 | 48.77570987 | 2.336120486 | 4.570606198 |
-|         |             | Average     | 1.834221439 | 4.145087774 |
+| P1 | 31.79851141 | 32.2572999  | -0.45878849  | -1.44279864  |
+|----|-------------|-------------|--------------|--------------|
+| P2 | 35.33167934 | 35.80366993 | -0.471990585 | -1.335884945 |
+| P3 | 30.03192744 | 30.28339982 | -0.251472378 | -0.837350111 |
+| P4 | 52.99751902 | 53.24861979 | -0.251100779 | -0.473797233 |
+| P5 | 49.46435108 | 49.76095986 | -0.296608782 | -0.59964151  |
+| P6 | 48.5810591  | 48.77570987 | -0.194650769 | -0.40067214  |
+|    |             | Average     | -0.320768631 | -0.84835743  |
 
 
 ___
@@ -394,31 +435,31 @@ P4 5000 2000
 P5 7000 1000
 
 Output:
-P1 30719
-P2 30729
-P3 30730
-P4 30731
-P5 30732
-[65344.520583] [Project1] 30719 1587971303.489549815 1587971308.933135457
-[65346.347512] [Project1] 30729 1587971308.933365393 1587971310.760185489
-[65353.656017] [Project1] 30730 1587971310.760346826 1587971318.069161073
-[65355.527623] [Project1] 30732 1587971318.069586658 1587971319.940888870
-[65359.121220] [Project1] 30731 1587971319.941089571 1587971323.534715198
+P1 14706
+P2 14716
+P3 14719
+P4 14729
+P5 14739
+[ 9536.084273] [Project1] 14706 1588061277.757753322 1588061283.279919110
+[ 9537.868827] [Project1] 14716 1588061283.314579015 1588061285.064478201
+[ 9544.909749] [Project1] 14719 1588061285.098123144 1588061292.105420598
+[ 9546.704102] [Project1] 14739 1588061292.139841938 1588061293.899778447
+[ 9550.241091] [Project1] 14729 1588061293.935813352 1588061297.436777523
 
 ```
 
-![](https://i.imgur.com/SEQ0sKV.png)
+![](https://i.imgur.com/kEki7pd.png)
 
 * Numerical Analysis:
 
-| Process | Ideal       | Real        | Error       | Error %     |
-|---------|-------------|-------------|-------------|-------------|
-| P1      | 5.575836039 | 5.439469814 | 0.136366224 | 2.445664172 |
-| P2      | 7.434448051 | 7.212879896 | 0.221568155 | 2.980290585 |
-| P3      | 14.8688961  | 14.38082981 | 0.488066292 | 3.282464875 |
-| P4      | 20.44473214 | 19.79210997 | 0.652622175 | 3.192128763 |
-| P5      | 16.72750812 | 16.18938994 | 0.538118172 | 3.216965539 |
-|         |             | Average     | 0.407348204 | 3.023502787 |
+| Process | Ideal       | Real        | Error        | Error %      |
+|---------|-------------|-------------|--------------|--------------|
+| P1      | 5.299751902 | 5.628249884 | -0.328497982 | -6.198365284 |
+| P2      | 7.066335869 | 7.507229805 | -0.440893936 | -6.239357205 |
+| P3      | 14.13267174 | 14.68330979 | -0.550638056 | -3.896206365 |
+| P4      | 19.43242364 | 20.03574991 | -0.603326273 | -3.104740223 |
+| P5      | 15.8992557  | 16.46881986 | -0.569564152 | -3.582332169 |
+|         |             | Average     | 0.407348204  | 3.023502787  |
 
 ___
 

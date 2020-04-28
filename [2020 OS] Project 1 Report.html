@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        [2020 OS] Project 1 Report - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@hackmd/emojify.js@2.1.0/dist/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @charset "UTF-8";@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{padding-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram,.markdown-body pre.vega{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code,.markdown-body pre.vega>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg,.markdown-body pre.vega>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;padding:0 15px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif}html[lang^=ja] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] .markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html .markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html .markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html .markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}html[lang^=ja] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html[lang=zh-tw] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html[lang=zh-cn] .ui-toc-dropdown{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}html .ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}html .ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}html .ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-published-note{color:#337ab7}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body{font-family:Source Sans Pro,Helvetica,Arial,sans-serif}html[lang^=ja] body{font-family:Source Sans Pro,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}html[lang=zh-tw] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}html[lang=zh-cn] body{font-family:Source Sans Pro,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled" data-hard-breaks="true" style="position: relative;"><h1 id="2020-OS-Project-1-Report"><a class="anchor hidden-xs" href="#2020-OS-Project-1-Report" title="2020-OS-Project-1-Report"><span class="octicon octicon-link"></span></a>[2020 OS] Project 1 Report</h1><p>B07902084 資工二 鄭益昀</p><h2 id="Background"><a class="anchor hidden-xs" href="#Background" title="Background"><span class="octicon octicon-link"></span></a>Background</h2><p>This project is written for Prof. Chih-Wen Hsueh’s 2020 Spring Operating Systems class by B07902084 資工二 鄭益昀.</p><p>Link to the girhub repository: <a href="https://github.com/ycheng627/OS_project1" target="_blank" rel="noopener">https://github.com/ycheng627/OS_project1</a></p><p>Setup</p><ul>
+<li>Host Operating System: Windows 10</li>
+<li>Hypervisor: Oracle VM Virtualbox version 6.1.4</li>
+<li>Linux Distribution: Ubuntu 16.04</li>
+<li>Compiled Kernel Version: Linux 4.14.25</li>
+</ul><h2 id="Design-Philosophy"><a class="anchor hidden-xs" href="#Design-Philosophy" title="Design-Philosophy"><span class="octicon octicon-link"></span></a>Design Philosophy</h2><h3 id="Process-Switching"><a class="anchor hidden-xs" href="#Process-Switching" title="Process-Switching"><span class="octicon octicon-link"></span></a>Process Switching</h3><ul>
+<li>The code for switching between processes can be found in the files <code>process.h</code> and <code>process.c</code>.</li>
+<li>The definition of a process is as below:</li>
+</ul><pre><code class="C hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span></div><div class="code"><span class="hljs-keyword">struct</span> process {
+	<span class="hljs-keyword">char</span> name[<span class="hljs-number">32</span>];
+	<span class="hljs-keyword">int</span> ready_time;
+	<span class="hljs-keyword">int</span> exec_time;
+	pid_t pid;
+        <span class="hljs-keyword">int</span> active;
+        <span class="hljs-keyword">int</span> exist;
+};
+</div></div></code></pre><ul>
+<li>There are four main functions implemented:
+<ul>
+<li>setCPU - sets the affinity of a process to a particular CPU. I have set aside two CPUs, <code>SCHEDULER_CPU = 0</code> and <code>FORK_CPU = 1</code>. All new processes are assigned to their respective CPU.</li>
+<li>maxPriority - takes in a <code>pid</code> and sets the priority of the pid to 99 by calling the function: <code>sched_setscheduler(pid, SCHED_FIFO, &amp;parameter)</code>. Notably, <code>sched_setscheduler()</code> actually sets the priority for a thread, but since we didn’t make any multithreaded program, each forked process can be treated as its own thread.</li>
+<li>minPriority - same implementation as maxPriority, except with priority = 0</li>
+<li>terminateProcess - takes in a <code>pid</code>, uses the <code>waitpid()</code> function to wait for the child, and set the process active and exist to 0.</li>
+<li>childProcess - forks a process.
+<ul>
+<li>For the parent, set the process’ pid, exist = 1, and minpriority</li>
+<li>For the child, set the cpu and minpriority. Record start time, run for designated time, record end time, then print using system call</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><pre><code class="C hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span>
+<span data-linenumber="46"></span>
+<span data-linenumber="47"></span>
+<span data-linenumber="48"></span>
+<span data-linenumber="49"></span>
+<span data-linenumber="50"></span>
+<span data-linenumber="51"></span></div><div class="code">setCPU(pid, cpu){
+    sched_setaffinity(pid, cpu);
+    <span class="hljs-comment">#CPU can take on 0 or 1 depending on SCHEDULER_CPU / FORK_CPU</span>
+}
+
+maxPriority(pid){
+    sched_setscheduler(pid, SCHED_FIFO, <span class="hljs-number">99</span>)
+}
+
+minPriority(pid){
+    sched_setscheduler(pid, SCHED_OTHER, <span class="hljs-number">0</span>)
+}
+
+medPriority(pid){
+    sched_setscheduler(pid, SCHED_OTHER, <span class="hljs-number">0</span>)
+    nice(<span class="hljs-number">-20</span>);
+}
+
+
+terminateProcess(proc){
+    waitpid(proc-&gt;pid, <span class="hljs-keyword">NULL</span>, <span class="hljs-number">0</span>)
+    proc-&gt;active = <span class="hljs-number">0</span>
+    proc-&gt;exist = <span class="hljs-number">0</span>
+}
+
+bufferProcess(){
+    <span class="hljs-keyword">if</span> (child){
+        setcpu(FORK_CPU)
+        medpriority
+        infinite loop;
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">parent</span>){
+        setcpu(FORK_CPU)
+        medpriority
+    }
+}
+
+childProcess(proc){
+    <span class="hljs-keyword">if</span> (child){
+        sched_yield();
+        record start
+        loop
+        record end
+        <span class="hljs-keyword">print</span>
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">parent</span>){
+        setcpu(FORK_CPU)
+        minPriority
+        <span class="hljs-keyword">print</span> name pid
+    }
+}
+</div></div></code></pre><h3 id="FIFO"><a class="anchor hidden-xs" href="#FIFO" title="FIFO"><span class="octicon octicon-link"></span></a>FIFO</h3><ul>
+<li>The FIFO scheduling policy runs the processes by their ready time. No preemption is done in FIFO.</li>
+<li>The pseudocode for FIFO is as below:</li>
+</ul><pre><code class="c hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span></div><div class="code">FIFO<span class="token punctuation">{</span>
+    <span class="token function">qsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//sort by ready time</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//set the cpu, and proc states</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>running process is done running<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            terminate process
+            running process id <span class="token operator">++</span> <span class="token comment">//for FIFO, it must be sequential</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>all process done<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>another process can be spawned<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            spawn a new process
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>process is selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            process <span class="token operator">=</span> active
+            process <span class="token operator">=</span> max priority
+        <span class="token punctuation">}</span>
+        unit <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        process exec time <span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</div></div></code></pre><h3 id="RR"><a class="anchor hidden-xs" href="#RR" title="RR"><span class="octicon octicon-link"></span></a>RR</h3><ul>
+<li>The Round Robin scheduling policy runs the processes one by one, and preemptively switch the process out once it reaches the time limit of one round (500 units)</li>
+<li>A queue is used in Round Robin, such that each time a process is switched out, it is added to the end of the queue and a new process is taken from the start</li>
+<li>The pseudocode for RR is as below:</li>
+</ul><pre><code class="c hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span></div><div class="code">RR<span class="token punctuation">{</span>
+    <span class="token function">createBuff</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//useful in many preemptions and stabilizing time</span>
+    <span class="token function">qsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//sort by ready time</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//set the cpu, and proc states</span>
+    q <span class="token operator">=</span> <span class="token function">createQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    running_process <span class="token operator">=</span> <span class="token constant">NULL</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        running_process <span class="token operator">=</span> q<span class="token operator">-&gt;</span>front<span class="token operator">-&gt;</span>proc
+        <span class="token keyword">if</span><span class="token punctuation">(</span>another process can be spawned<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            spawn a new process
+            add to end of queue
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>running process is done running<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            terminate process
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>all process done<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                kill buffer
+                <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>switch_time is up<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            tmp <span class="token operator">=</span> <span class="token function">dequeue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token function">enqueue</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span> <span class="token comment">//move the process to the end of queue</span>
+            switch_time <span class="token operator">=</span> <span class="token number">500</span>
+            running_process <span class="token operator">=</span> <span class="token constant">NULL</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>process is selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            process <span class="token operator">=</span> active
+            process <span class="token operator">=</span> max priority
+        <span class="token punctuation">}</span>
+        unit <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        process exec time <span class="token operator">--</span>
+        switch_time <span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</div></div></code></pre><h3 id="SJF"><a class="anchor hidden-xs" href="#SJF" title="SJF"><span class="octicon octicon-link"></span></a>SJF</h3><ul>
+<li>The Shortest Job First policy runs the shortest of the currently available jobs. It does not get preempted.</li>
+<li>A priority queue is used in SJF, the priority is set based on the execution time remaining (lowest first)
+<ul>
+<li>Different from RR, the current running job is NOT in the priority queue, this is to prevent a new job from pushing it downwards</li>
+</ul>
+</li>
+<li>The pseudocode for SJF is as below:</li>
+</ul><pre><code class="c hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span></div><div class="code">SJF<span class="token punctuation">{</span>
+    createBuff 
+    <span class="token function">qsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//sort by ready time</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//set the cpu, and proc states</span>
+    pq <span class="token operator">=</span> <span class="token function">createPriorityQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    running_process <span class="token operator">=</span> <span class="token constant">NULL</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>running process is done running<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            terminate process
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>all process done<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                kill buff
+                <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>another process can be spawned<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            spawn a new process
+            add to priority queue
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>no process is running now<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            running_process <span class="token operator">=</span> pq<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        unit <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        process exec time <span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</div></div></code></pre><h3 id="PSJF"><a class="anchor hidden-xs" href="#PSJF" title="PSJF"><span class="octicon octicon-link"></span></a>PSJF</h3><ul>
+<li>The Preempted Shortest Job First policy runs the shortest of the currently available jobs. It allows for preemption, such that when a new, better job arrives, the scheduler will switch to new job
+<ul>
+<li>It should be logical that any “switch” will only occur when a new job arrive. So I only check for switching if a new job is spawned and not every unit time</li>
+</ul>
+</li>
+<li>A priority queue is used in PSJF, the priority is set based on the execution time remaining (lowest first)</li>
+<li>The pseudocode for PSJF is as below:</li>
+</ul><pre><code class="c hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span></div><div class="code">PSJF<span class="token punctuation">{</span>
+    <span class="token function">qsort</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//sort by ready time</span>
+    <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">//set the cpu, and proc states</span>
+    pq <span class="token operator">=</span> <span class="token function">createPriorityQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    running_process <span class="token operator">=</span> <span class="token constant">NULL</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>running process is done running<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            terminate process
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>all process done<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>another process can be spawned<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            spawn a new process
+            add to priority queue
+            <span class="token keyword">if</span><span class="token punctuation">(</span>new process better than current process<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                run new process
+                add current process into pq
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>no process is running now<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            running_process <span class="token operator">=</span> pq<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>process is selected<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            process <span class="token operator">=</span> active
+            process <span class="token operator">=</span> max priority
+        <span class="token punctuation">}</span>
+        unit <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        process exec time <span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</div></div></code></pre><h3 id="Final-Notes"><a class="anchor hidden-xs" href="#Final-Notes" title="Final-Notes"><span class="octicon octicon-link"></span></a>Final Notes</h3><ul>
+<li>Two if statements are added in preempted versions that deals with setting selected but not running process. This is to double check as preemption may mess up the ways in which a new system starts running</li>
+</ul><h2 id="Comparison-of-Results"><a class="anchor hidden-xs" href="#Comparison-of-Results" title="Comparison-of-Results"><span class="octicon octicon-link"></span></a>Comparison of Results</h2><h3 id="Notes"><a class="anchor hidden-xs" href="#Notes" title="Notes"><span class="octicon octicon-link"></span></a>Notes</h3><ul>
+<li>A file named “error.txt” contains a numerical representation of everything. However, only below results were made into graphs
+<ul>
+<li><mark>The error report generating program is written by Kaienlin, and I am simply using it to check my work</mark></li>
+</ul>
+</li>
+<li>I will attempt to compare the results for the 4 test cases as specified in DEMO.</li>
+<li>Since I don’t really know how to plot using python or matlab, I will be using google sheets and tricks. More on the methodology later</li>
+<li>In the numerical comparison section, I am comparing the end time of the ideal and actual forked process.
+<ul>
+<li>I think end time better represent the actual duration it runs in case of weird CPU scheduling bursts (ex. one process gets a unit randomly before context switching out again)</li>
+</ul>
+</li>
+<li>Error and Error rate is calculated by the formulas:
+<ul>
+<li><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-269-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 113%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mo>=</mo><mi>I</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>d</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>&amp;#x2212;</mo><mi>r</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>d</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi></math>" role="presentation"><span id="MJXc-Node-7813" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-7814" class="mjx-mrow"><span id="MJXc-Node-7815" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.026em;">E</span></span><span id="MJXc-Node-7816" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7817" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7818" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">o</span></span><span id="MJXc-Node-7819" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7820" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.058em; padding-bottom: 0.335em;">=</span></span><span id="MJXc-Node-7821" class="mjx-mi MJXc-space3"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.064em;">I</span></span><span id="MJXc-Node-7822" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.003em;">d</span></span><span id="MJXc-Node-7823" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7824" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">a</span></span><span id="MJXc-Node-7825" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">l</span></span><span id="MJXc-Node-7826" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7827" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">n</span></span><span id="MJXc-Node-7828" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.003em;">d</span></span><span id="MJXc-Node-7829" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.39em; padding-bottom: 0.279em;">t</span></span><span id="MJXc-Node-7830" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">i</span></span><span id="MJXc-Node-7831" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">m</span></span><span id="MJXc-Node-7832" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7833" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.279em; padding-bottom: 0.445em;">−</span></span><span id="MJXc-Node-7834" class="mjx-mi MJXc-space2"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7835" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7836" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">a</span></span><span id="MJXc-Node-7837" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">l</span></span><span id="MJXc-Node-7838" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7839" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">n</span></span><span id="MJXc-Node-7840" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.003em;">d</span></span><span id="MJXc-Node-7841" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.39em; padding-bottom: 0.279em;">t</span></span><span id="MJXc-Node-7842" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">i</span></span><span id="MJXc-Node-7843" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">m</span></span><span id="MJXc-Node-7844" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mo>=</mo><mi>I</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>d</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi><mo>−</mo><mi>r</mi><mi>e</mi><mi>a</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>d</mi><mi>t</mi><mi>i</mi><mi>m</mi><mi>e</mi></math></span></span><script type="math/tex" id="MathJax-Element-269">Error = Ideal end time - real end time</script></span></li>
+<li><span class="mathjax"><span class="MathJax_Preview" style="color: inherit;"></span><span id="MathJax-Element-270-Frame" class="mjx-chtml MathJax_CHTML" tabindex="0" style="font-size: 113%; position: relative;" data-mathml="<math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mi mathvariant=&quot;normal&quot;>&amp;#x0025;</mi><mo>=</mo><mo stretchy=&quot;false&quot;>(</mo><mi>i</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo>&amp;#x2212;</mo><mi>r</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo stretchy=&quot;false&quot;>)</mo><mrow class=&quot;MJX-TeXAtom-ORD&quot;><mo>/</mo></mrow><mi>i</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo>&amp;#x2217;</mo><mn>100</mn></math>" role="presentation"><span id="MJXc-Node-7845" class="mjx-math" aria-hidden="true"><span id="MJXc-Node-7846" class="mjx-mrow"><span id="MJXc-Node-7847" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.026em;">E</span></span><span id="MJXc-Node-7848" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7849" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7850" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">o</span></span><span id="MJXc-Node-7851" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7852" class="mjx-mi"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.445em; padding-bottom: 0.39em;">%</span></span><span id="MJXc-Node-7853" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.058em; padding-bottom: 0.335em;">=</span></span><span id="MJXc-Node-7854" class="mjx-mo MJXc-space3"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.445em; padding-bottom: 0.611em;">(</span></span><span id="MJXc-Node-7855" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">i</span></span><span id="MJXc-Node-7856" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.003em;">d</span></span><span id="MJXc-Node-7857" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7858" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">a</span></span><span id="MJXc-Node-7859" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">l</span></span><span id="MJXc-Node-7860" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.279em; padding-bottom: 0.445em;">−</span></span><span id="MJXc-Node-7861" class="mjx-mi MJXc-space2"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">r</span></span><span id="MJXc-Node-7862" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7863" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">a</span></span><span id="MJXc-Node-7864" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">l</span></span><span id="MJXc-Node-7865" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.445em; padding-bottom: 0.611em;">)</span></span><span id="MJXc-Node-7866" class="mjx-texatom"><span id="MJXc-Node-7867" class="mjx-mrow"><span id="MJXc-Node-7868" class="mjx-mo"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.445em; padding-bottom: 0.611em;">/</span></span></span></span><span id="MJXc-Node-7869" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">i</span></span><span id="MJXc-Node-7870" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em; padding-right: 0.003em;">d</span></span><span id="MJXc-Node-7871" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">e</span></span><span id="MJXc-Node-7872" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.224em; padding-bottom: 0.279em;">a</span></span><span id="MJXc-Node-7873" class="mjx-mi"><span class="mjx-char MJXc-TeX-math-I" style="padding-top: 0.445em; padding-bottom: 0.279em;">l</span></span><span id="MJXc-Node-7874" class="mjx-mo MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.169em; padding-bottom: 0.335em;">∗</span></span><span id="MJXc-Node-7875" class="mjx-mn MJXc-space2"><span class="mjx-char MJXc-TeX-main-R" style="padding-top: 0.39em; padding-bottom: 0.39em;">100</span></span></span></span><span class="MJX_Assistive_MathML" role="presentation"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>E</mi><mi>r</mi><mi>r</mi><mi>o</mi><mi>r</mi><mi mathvariant="normal">%</mi><mo>=</mo><mo stretchy="false">(</mo><mi>i</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo>−</mo><mi>r</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo stretchy="false">)</mo><mrow class="MJX-TeXAtom-ORD"><mo>/</mo></mrow><mi>i</mi><mi>d</mi><mi>e</mi><mi>a</mi><mi>l</mi><mo>∗</mo><mn>100</mn></math></span></span><script type="math/tex" id="MathJax-Element-270">Error \% = (ideal - real) / ideal * 100</script></span></li>
+</ul>
+</li>
+</ul><h3 id="Time-Measurement"><a class="anchor hidden-xs" href="#Time-Measurement" title="Time-Measurement"><span class="octicon octicon-link"></span></a>Time Measurement</h3><ul>
+<li>Methodology: Run main.out on TIME_MEASUREMENT.txt, and average the 10 processes divide by 500 to get how long an average tick is</li>
+</ul><pre><code>P0 23372
+P1 23373
+P2 23374
+P3 23375
+P4 23376
+P5 23377
+P6 23378
+P7 23379
+P8 23380
+P9 23381
+
+[40241.669954] [Project1] 23372 1587911858.701167936 1587911859.597331010
+[40243.510711] [Project1] 23373 1587911860.515233307 1587911861.438093260
+[40245.345744] [Project1] 23374 1587911862.361411988 1587911863.273133035
+[40247.167505] [Project1] 23375 1587911864.158625024 1587911865.094900224
+[40249.020853] [Project1] 23376 1587911866.029510584 1587911866.948254231
+[40250.875423] [Project1] 23377 1587911867.870158217 1587911868.802831148
+[40252.711328] [Project1] 23378 1587911869.701709697 1587911870.638742370
+[40254.622502] [Project1] 23379 1587911871.567760362 1587911872.549923606
+[40256.435952] [Project1] 23380 1587911873.457732545 1587911874.363378609
+[40258.297437] [Project1] 23381 1587911875.275094170 1587911876.224869904
+
+</code></pre><p>Average time per process = 0.929306006<br>
+Average unit time = 0.001858612</p><hr><h3 id="FIFO_1txt"><a class="anchor hidden-xs" href="#FIFO_1txt" title="FIFO_1txt"><span class="octicon octicon-link"></span></a>FIFO_1.txt</h3><ul>
+<li>Each process should take <code>average unit time</code> * <code>exec time</code> number of seconds.</li>
+</ul><pre><code>Input:
+FIFO
+5
+P1 0 500
+P2 0 500
+P3 0 500
+P4 0 500
+P5 0 500
+
+Output:
+P1 16366
+P2 16367
+P3 16368
+P4 16369
+P5 16370
+[ 10420.985192] [Project1] 16366 1588062167.294876904 1588062168.182127997
+[ 10421.986098] [Project1] 16367 1588062168.219540761 1588062169.183035571
+[ 10422.955308] [Project1] 16368 1588062169.217554920 1588062170.152245508
+[ 10423.982888] [Project1] 16369 1588062170.189252719 1588062171.179829336
+[ 10424.920229] [Project1] 16370 1588062171.215347141 1588062172.117171723
+
+</code></pre><p><img src="https://i.imgur.com/1PI4dOZ.png" alt=""></p><ul>
+<li>I’ve created an excel graph that shows approximately how my process runs compared to the ideal process deduced by the calculation earlier</li>
+<li>Some numerical Comparisons:</li>
+<li></li>
+</ul><table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Ideal</th>
+<th>Real</th>
+<th>Error</th>
+<th>Error %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>0.929306</td>
+<td>0.9062</td>
+<td>0.023106</td>
+<td>2.486354</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>0.929306</td>
+<td>0.9308</td>
+<td>-0.001494</td>
+<td>-0.16076</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>0.929306</td>
+<td>0.91039</td>
+<td>0.018916</td>
+<td>2.035509</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>0.929306</td>
+<td>0.91806</td>
+<td>0.011246</td>
+<td>1.21017</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>0.929306</td>
+<td>0.89966</td>
+<td>0.029646</td>
+<td>3.190137</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Total</td>
+<td>0.08142</td>
+<td>1.752282</td>
+</tr>
+</tbody>
+</table><hr><h3 id="PSJF_2txt"><a class="anchor hidden-xs" href="#PSJF_2txt" title="PSJF_2txt"><span class="octicon octicon-link"></span></a>PSJF_2.txt</h3><ul>
+<li>Hand calculated values that corresponds to ideal</li>
+</ul><pre><code>Input:
+PSJF
+5
+P1 0 3000
+P2 1000 1000
+P3 2000 4000
+P4 5000 2000
+P5 7000 1000
+
+Output:
+P1 14356
+P2 14366
+P3 14367
+P4 14377
+P5 14387
+[ 9186.843564] [Project1] 14366 1588060932.291060468 1588060934.037701912
+[ 9190.355908] [Project1] 14356 1588060930.502432294 1588060937.550066857
+[ 9195.685099] [Project1] 14377 1588060939.328638025 1588060942.879290227
+[ 9197.473106] [Project1] 14387 1588060942.921875272 1588060944.667307603
+[ 9202.912052] [Project1] 14367 1588060937.583959347 1588060950.106286359
+</code></pre><p><img src="https://i.imgur.com/XgE4cUJ.png" alt=""></p><ul>
+<li>I’ve created an excel graph that shows approximately how my process runs compared to the ideal process deduced by the calculation earlier</li>
+<li>Every tick is 1000 unit time</li>
+<li>Some numerical Comparisons:</li>
+</ul><table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Ideal</th>
+<th>Real</th>
+<th>Error</th>
+<th>Error %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>7.066336</td>
+<td>7.33615</td>
+<td>-0.26981</td>
+<td>-3.8183</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>3.533168</td>
+<td>3.5962</td>
+<td>-0.06303</td>
+<td>-1.78401</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>19.43242</td>
+<td>20.04084</td>
+<td>-0.60842</td>
+<td>-3.13093</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>12.36609</td>
+<td>12.67951</td>
+<td>-0.31342</td>
+<td>-2.53453</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>14.13267</td>
+<td>14.47798</td>
+<td>-0.34531</td>
+<td>-2.44333</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Average</td>
+<td>-0.32</td>
+<td>-2.74222</td>
+</tr>
+</tbody>
+</table><hr><h3 id="RR_3txt"><a class="anchor hidden-xs" href="#RR_3txt" title="RR_3txt"><span class="octicon octicon-link"></span></a>RR_3.txt</h3><ul>
+<li>Since I don’t know when my program “starts”, I can’t really count the first 1200 time unit where round robin doesn’t schedule anything. I will therefore use 1200 as the starting point, and adjust all ready time by <code>ready_time-=1200</code>.</li>
+<li>Note that after this adjustment, ready time of p5 becomes 4000. My program will add it to queue before the current process is “recycled”.
+<ul>
+<li>In other words, when P1 is done, and wants to be inserted after P4, P5 is first inserted before P1. The queue then looks like <code>P2-&gt;P3-&gt;P4-&gt;P5-&gt;P1</code></li>
+</ul>
+</li>
+</ul><pre><code>Input:
+RR
+6
+P1 1200 5000
+P2 2400 4000
+P3 3600 3000
+P4 4800 7000
+P5 5200 6000
+P6 5800 5000
+
+Output:
+P1 26643
+P2 26648
+P3 26662
+P4 26671
+P5 26672
+P6 26673
+[ 59208.423055] [Project1] 26662 1587965147.864252931 1587965172.813845499
+[ 59210.396962] [Project1] 26643 1587965142.530445047 1587965174.787749261
+[ 59213.943330] [Project1] 26648 1587965145.250197199 1587965178.334113428
+[ 59226.915400] [Project1] 26673 1587965155.116422453 1587965191.306156452
+[ 59227.900640] [Project1] 26672 1587965152.443684083 1587965192.291404436
+[ 59231.388307] [Project1] 26671 1587965151.525809306 1587965195.779066531
+</code></pre><p><img src="https://i.imgur.com/IGhlnAq.png" alt=""></p><ul>
+<li>The graph aboveshows clearly that the real and ideal process have a very similar overall trend/spread (as expected if my scheduler is correct), but the real process runs faster (magnitude of up to 1500 unit time)
+<ul>
+<li>Do note that the “end time” as represented by orange is the time the child process end, not the time the scheduler decide to wait for it (which would be basically ideal)</li>
+</ul>
+</li>
+<li>Some numerical Comparison</li>
+</ul><table>
+<thead>
+<tr>
+<th>P1</th>
+<th>31.79851141</th>
+<th>32.2572999</th>
+<th>-0.45878849</th>
+<th>-1.44279864</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P2</td>
+<td>35.33167934</td>
+<td>35.80366993</td>
+<td>-0.471990585</td>
+<td>-1.335884945</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>30.03192744</td>
+<td>30.28339982</td>
+<td>-0.251472378</td>
+<td>-0.837350111</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>52.99751902</td>
+<td>53.24861979</td>
+<td>-0.251100779</td>
+<td>-0.473797233</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>49.46435108</td>
+<td>49.76095986</td>
+<td>-0.296608782</td>
+<td>-0.59964151</td>
+</tr>
+<tr>
+<td>P6</td>
+<td>48.5810591</td>
+<td>48.77570987</td>
+<td>-0.194650769</td>
+<td>-0.40067214</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Average</td>
+<td>-0.320768631</td>
+<td>-0.84835743</td>
+</tr>
+</tbody>
+</table><hr><h3 id="SJF_4txt"><a class="anchor hidden-xs" href="#SJF_4txt" title="SJF_4txt"><span class="octicon octicon-link"></span></a>SJF_4.txt</h3><ul>
+<li>No preemption needed, each round select the shortest exec time process and run until finished.</li>
+</ul><pre><code>Input:
+SJF
+5
+P1 0 3000
+P2 1000 1000
+P3 2000 4000
+P4 5000 2000
+P5 7000 1000
+
+Output:
+P1 14706
+P2 14716
+P3 14719
+P4 14729
+P5 14739
+[ 9536.084273] [Project1] 14706 1588061277.757753322 1588061283.279919110
+[ 9537.868827] [Project1] 14716 1588061283.314579015 1588061285.064478201
+[ 9544.909749] [Project1] 14719 1588061285.098123144 1588061292.105420598
+[ 9546.704102] [Project1] 14739 1588061292.139841938 1588061293.899778447
+[ 9550.241091] [Project1] 14729 1588061293.935813352 1588061297.436777523
+
+</code></pre><p><img src="https://i.imgur.com/kEki7pd.png" alt=""></p><ul>
+<li>Numerical Analysis:</li>
+</ul><table>
+<thead>
+<tr>
+<th>Process</th>
+<th>Ideal</th>
+<th>Real</th>
+<th>Error</th>
+<th>Error %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>P1</td>
+<td>5.299751902</td>
+<td>5.628249884</td>
+<td>-0.328497982</td>
+<td>-6.198365284</td>
+</tr>
+<tr>
+<td>P2</td>
+<td>7.066335869</td>
+<td>7.507229805</td>
+<td>-0.440893936</td>
+<td>-6.239357205</td>
+</tr>
+<tr>
+<td>P3</td>
+<td>14.13267174</td>
+<td>14.68330979</td>
+<td>-0.550638056</td>
+<td>-3.896206365</td>
+</tr>
+<tr>
+<td>P4</td>
+<td>19.43242364</td>
+<td>20.03574991</td>
+<td>-0.603326273</td>
+<td>-3.104740223</td>
+</tr>
+<tr>
+<td>P5</td>
+<td>15.8992557</td>
+<td>16.46881986</td>
+<td>-0.569564152</td>
+<td>-3.582332169</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>Average</td>
+<td>0.407348204</td>
+<td>3.023502787</td>
+</tr>
+</tbody>
+</table><hr><h2 id="Conclusion-and-Discussion"><a class="anchor hidden-xs" href="#Conclusion-and-Discussion" title="Conclusion-and-Discussion"><span class="octicon octicon-link"></span></a>Conclusion and Discussion</h2><h3 id="Things-I-did-well"><a class="anchor hidden-xs" href="#Things-I-did-well" title="Things-I-did-well"><span class="octicon octicon-link"></span></a>Things I did well</h3><ul>
+<li>Overall, the scheduling policies looks correct in terms of their ordering</li>
+<li>For the four tests I ran, their error rate are all relatively low</li>
+</ul><h3 id="Things-to-improve"><a class="anchor hidden-xs" href="#Things-to-improve" title="Things-to-improve"><span class="octicon octicon-link"></span></a>Things to improve</h3><ul>
+<li>I should be making a better, automated way to check and create graph. However, I don’t have enough expertise, and so created all my graphs and tables in excel (check the report_excel file)</li>
+<li>In my debugging, I have seen a few cases where the high priority job finishes before the scheduler, and so the CPU automatically scheduled the next job (out of my control)
+<ul>
+<li>One way to control this behavious is by making the “next” process having a medium priority, thus whenever the real high priority process finishes, the scheduler will choose the correct next process to run</li>
+</ul>
+</li>
+</ul><h3 id="Analysis-of-error"><a class="anchor hidden-xs" href="#Analysis-of-error" title="Analysis-of-error"><span class="octicon octicon-link"></span></a>Analysis of error</h3><ul>
+<li>Forked process runs faster than scheduler
+<ul>
+<li>This is a result of each “time unit”, my scheduler have to check more things, whereas the child just have to run a timeunit() function</li>
+<li>Logically, my scheduler takes longer per unit time, and therefore the real process start and end time is faster</li>
+<li>While there may be more overhead due to the forked process being switched around, overall it seems that scheduler still runs slower</li>
+</ul>
+</li>
+<li>Synchronization of cores
+<ul>
+<li>The forked cpu and scheduler runs on two different CPU. These two CPU are not neccessarily synchronized - problems as small as a manufacturing difference may possibly affect the speeds of each CPU</li>
+<li>The cores never communicate with each other, so there was no way that 500 unit time of one is the same as 500 unit time of another</li>
+</ul>
+</li>
+<li>CPU allocation
+<ul>
+<li>Before I started running this program, there are already other processes running on all of the CPU. The processes are obviously not identical, so the load of each CPU may further affect the speed on each core</li>
+</ul>
+</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#2020-OS-Project-1-Report" title="[2020 OS] Project 1 Report">[2020 OS] Project 1 Report</a><ul class="nav">
+<li class=""><a href="#Background" title="Background">Background</a></li>
+<li class=""><a href="#Design-Philosophy" title="Design Philosophy">Design Philosophy</a><ul class="nav">
+<li class=""><a href="#Process-Switching" title="Process Switching">Process Switching</a></li>
+<li class=""><a href="#FIFO" title="FIFO">FIFO</a></li>
+<li class=""><a href="#RR" title="RR">RR</a></li>
+<li class=""><a href="#SJF" title="SJF">SJF</a></li>
+<li class=""><a href="#PSJF" title="PSJF">PSJF</a></li>
+<li class=""><a href="#Final-Notes" title="Final Notes">Final Notes</a></li>
+</ul>
+</li>
+<li class=""><a href="#Comparison-of-Results" title="Comparison of Results">Comparison of Results</a><ul class="nav">
+<li class=""><a href="#Notes" title="Notes">Notes</a></li>
+<li class=""><a href="#Time-Measurement" title="Time Measurement">Time Measurement</a></li>
+<li class=""><a href="#FIFO_1txt" title="FIFO_1.txt">FIFO_1.txt</a></li>
+<li><a href="#PSJF_2txt" title="PSJF_2.txt">PSJF_2.txt</a></li>
+<li><a href="#RR_3txt" title="RR_3.txt">RR_3.txt</a></li>
+<li><a href="#SJF_4txt" title="SJF_4.txt">SJF_4.txt</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion-and-Discussion" title="Conclusion and Discussion">Conclusion and Discussion</a><ul class="nav">
+<li><a href="#Things-I-did-well" title="Things I did well">Things I did well</a></li>
+<li><a href="#Things-to-improve" title="Things to improve">Things to improve</a></li>
+<li><a href="#Analysis-of-error" title="Analysis of error">Analysis of error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#2020-OS-Project-1-Report" title="[2020 OS] Project 1 Report">[2020 OS] Project 1 Report</a><ul class="nav">
+<li class=""><a href="#Background" title="Background">Background</a></li>
+<li class=""><a href="#Design-Philosophy" title="Design Philosophy">Design Philosophy</a><ul class="nav">
+<li class=""><a href="#Process-Switching" title="Process Switching">Process Switching</a></li>
+<li class=""><a href="#FIFO" title="FIFO">FIFO</a></li>
+<li class=""><a href="#RR" title="RR">RR</a></li>
+<li class=""><a href="#SJF" title="SJF">SJF</a></li>
+<li class=""><a href="#PSJF" title="PSJF">PSJF</a></li>
+<li class=""><a href="#Final-Notes" title="Final Notes">Final Notes</a></li>
+</ul>
+</li>
+<li class=""><a href="#Comparison-of-Results" title="Comparison of Results">Comparison of Results</a><ul class="nav">
+<li class=""><a href="#Notes" title="Notes">Notes</a></li>
+<li class=""><a href="#Time-Measurement" title="Time Measurement">Time Measurement</a></li>
+<li class=""><a href="#FIFO_1txt" title="FIFO_1.txt">FIFO_1.txt</a></li>
+<li><a href="#PSJF_2txt" title="PSJF_2.txt">PSJF_2.txt</a></li>
+<li><a href="#RR_3txt" title="RR_3.txt">RR_3.txt</a></li>
+<li><a href="#SJF_4txt" title="SJF_4.txt">SJF_4.txt</a></li>
+</ul>
+</li>
+<li><a href="#Conclusion-and-Discussion" title="Conclusion and Discussion">Conclusion and Discussion</a><ul class="nav">
+<li><a href="#Things-I-did-well" title="Things I did well">Things I did well</a></li>
+<li><a href="#Things-to-improve" title="Things to improve">Things to improve</a></li>
+<li><a href="#Analysis-of-error" title="Analysis of error">Analysis of error</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
